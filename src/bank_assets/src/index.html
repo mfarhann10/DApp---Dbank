@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>bank</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo.png" alt="DFINITY logo" />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBank</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container max-w-md bg-white shadow-lg rounded-lg p-8">
+        <div class="text-center mb-8">
+            <img src="dbank_logo.png" alt="DBank logo" class="w-24 mx-auto mb-4" />
+            <h1 class="text-2xl font-bold text-gray-800">Current Balance: $<span id="value"
+                    class="text-green-500">234</span></h1>
+        </div>
+
+        <div class="border-t border-gray-300 my-6"></div>
+
+        <form action="#" class="space-y-6">
+            <div>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">Amount to Top Up</h2>
+                <input id="input-amount" type="number" step="0.01" min="0" name="topUp"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter amount to top up" />
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold text-gray-700 mb-2">Amount to Withdraw</h2>
+                <input id="withdrawal-amount" type="number" step="0.01" min="0" name="withdraw"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter amount to withdraw" />
+            </div>
+
+            <div>
+                <input id="submit-btn" type="submit" value="Finalise Transaction"
+                    class="w-full bg-blue-500 text-white font-semibold py-3 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out cursor-pointer focus:outline-none focus:ring-4 focus:ring-blue-300" />
+            </div>
+        </form>
+    </div>
+</body>
+
+
 </html>
