@@ -13,10 +13,6 @@ actor DBank {
   let id = 123456;
   /* Debug.print(debug_show (id)); */
 
-  public query func checkBalance() : async Float {
-    return currentValue;
-  };
-
   public func topUp(ammount : Float) {
     currentValue += ammount;
     Debug.print(debug_show (currentValue));
@@ -33,14 +29,17 @@ actor DBank {
 
   };
 
+  public query func checkBalance() : async Float {
+    return currentValue;
+  };
+
   /* TopUp(); */
 
-  public func Compound() {
+  public func compound() {
     let currentTime = Time.now();
-    let timeElapseNS = currentTime - startTime;
-    let timeElapseS = timeElapseNS / 1000000000;
-
-    currentValue := currentValue * (1.01 ** Float.fromInt(timeElapseS));
+    let timeElapsedNS = currentTime - startTime;
+    let timeElapsedS = timeElapsedNS / 1000000000;
+    currentValue := currentValue * (1.01 ** Float.fromInt(timeElapsedS));
     startTime := currentTime;
   };
 };
