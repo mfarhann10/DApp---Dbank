@@ -12,6 +12,7 @@ document.querySelector("form").addEventListener("submit", async function (event)
     //console.log("Submit");
     const button = event.target.querySelector("#submit-btn");
 
+    //handle input field
     const inputAmount = parseFloat(document.getElementById("input-amount").value);
     const outputAmount = parseFloat(document.getElementById("withdrawal-amount").value);
 
@@ -26,6 +27,8 @@ document.querySelector("form").addEventListener("submit", async function (event)
     if (document.getElementById("withdrawal-amount").value.length != 0) {
         await bank.withdraw(outputAmount);
     }
+
+    await bank.compound();
 
     update();
 
